@@ -1,0 +1,38 @@
+.container {
+  perspective: 1000px;
+  height: 300px;
+  width: 300px;
+}
+
+.inner-card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .3s;
+}
+
+.container:hover .inner-card {
+  transform: rotateY(180deg);
+}
+
+.project-front, .project-back {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  backface-visibility: hidden;
+  --webkit-face-visibility: hidden;
+}
+
+.project-front {
+  background-color: fuchsia;
+}
+
+.project-back {
+  background-color: purple;
+  transform: rotateY(180deg);
+}
